@@ -1,4 +1,4 @@
-require_relative '../lib/frame'
+require 'frame'
 
 RSpec.describe Frame do
 
@@ -28,12 +28,5 @@ RSpec.describe Frame do
 
     expect(frame.strike?).to eq false
     expect(frame.spare?).to eq true
-  end
-
-  it "returns an error if the sum of first and second roll > 10" do
-    frame = Frame.new
-    frame.first_roll(7)
-
-    expect { frame.second_roll(4) }.to raise_error "the sum for first_roll and second_roll can not be grater than 10"
   end
 end

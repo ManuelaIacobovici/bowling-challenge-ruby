@@ -3,6 +3,10 @@ class Frame
     @frame_score = []
   end
 
+  def roll(first, second)
+    
+  end
+
   def first_roll(first_score) # first_score is an integer
     @first_score = first_score
     @frame_score << first_score
@@ -11,12 +15,11 @@ class Frame
 
   def second_roll(second_score) # second_score is an integer
     @second_score = second_score
-    @frame_score << scond_score
+    @frame_score << second_score
   end
 
   def frame_scores
-    fail "before final score is calculated you have to roll another ball" 
-    unless @frame_score.include?(@first_score) && @frame_score.include?(@second_score)
+    fail "before final score is calculated you have to roll another ball" unless @frame_score.include?(@first_score) && @frame_score.include?(@second_score)
     return @frame_score
   end
 
